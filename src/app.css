@@ -7,6 +7,9 @@ html {
   --accent: #14b8a6;
   --background: #1e1b4b;
   --highlight: #a78bfa;
+  --sidebar-width: 18rem;
+  --navbar-offset: 6rem;
+  --sidebar-extra-offset: 0rem;
 }
 
 body {
@@ -16,6 +19,26 @@ body {
 
 main {
   min-height: 200vh;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.app-layout.is-home-route {
+  --sidebar-extra-offset: 16rem;
+}
+
+.app-route-content {
+  width: 100%;
+}
+
+@media (max-width: 64rem) {
+  .app-layout {
+    flex-direction: column;
+  }
 }
 
 a {
@@ -213,7 +236,7 @@ a {
     position: static;
     width: 100%;
     margin: 0;
-    margin-top: 2rem;
+    margin-top: 0rem;
     border-radius: 0;
     left: auto;
     transform: none;
@@ -272,23 +295,26 @@ a {
 }
 
 .sidebar {
-  position: sticky;
-  top: 0;
-  width: 18rem;
-  height: 100vh;
+  position: fixed;
+  top: calc(var(--navbar-offset) + var(--sidebar-extra-offset));
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-offset) - var(--sidebar-extra-offset));
   background: linear-gradient(135deg, var(--background) 0%, #1a1a2e 100%);
-  z-index: 9999;
+  z-index: 1000;
   overflow-y: auto;
   box-shadow: 4px 0 20px rgba(139, 92, 246, 0.3);
-  margin-top: 6rem;
 }
 
 @media (max-width: 64rem) {
   .sidebar {
     position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
     height: auto;
     z-index: 9999;
+    overflow: visible;
     margin-top: 0;
   }
 }
@@ -323,11 +349,31 @@ a {
   gap: 0.5rem;
 }
 
+.sidebar-nav-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-nav-group-title {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .sidebar-nav-link {
   transition: all 0.3s ease;
 }
 
-.sidebar-nav-link a {
+.sidebar-nav-anchor {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -339,7 +385,8 @@ a {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.sidebar-nav-link a:hover {
+.sidebar-nav-anchor:hover,
+.sidebar-nav-anchor.active {
   background-color: var(--primary);
   transform: translateX(5px);
   color: white;
@@ -351,6 +398,7 @@ a {
   transition: transform 0.3s ease;
 }
 
-.sidebar-nav-link a:hover svg {
+.sidebar-nav-anchor:hover svg,
+.sidebar-nav-anchor.active svg {
   transform: translateX(5px);
 }
