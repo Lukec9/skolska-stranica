@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom";
 
-const primaryLinks = [{ text: "Home", path: "/" }];
+const primaryLinks = [{ text: "Home", path: "/", icon: "🏠" }];
 
 const demoLinks = [
-  { text: "Carousel Demo", path: "/carousel" },
-  { text: "Footer Demo", path: "/footer" },
-  { text: "Palette 1 - Academic", path: "/palette1" },
-  { text: "Palette 2 - Modern", path: "/palette2" },
-  { text: "Palette 3 - Creative", path: "/palette3" },
+  { text: "Carousel Demo", path: "/carousel", icon: "🎠" },
+  { text: "Footer Demo", path: "/footer", icon: "🧱" },
+  { text: "Palette 1 - Academic", path: "/palette1", icon: "🎓" },
+  { text: "Palette 2 - Modern", path: "/palette2", icon: "✨" },
+  { text: "Palette 3 - Creative", path: "/palette3", icon: "🎨" },
 ];
 
-function NavItem({ text, path }) {
+function NavItem({ text, path, icon, isCollapsed }) {
   return (
     <li className="sidebar-nav-link">
       <NavLink
@@ -18,15 +18,19 @@ function NavItem({ text, path }) {
         className={({ isActive }) =>
           `sidebar-nav-anchor${isActive ? " active" : ""}`
         }
+        title={isCollapsed ? text : undefined}
         end={path === "/"}
       >
-        {text}
+        <span className="sidebar-nav-icon" aria-hidden="true">
+          {icon}
+        </span>
+        <span className="sidebar-nav-text">{text}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
           fill="currentColor"
-          className="bi bi-arrow-right-square"
+          className="bi bi-arrow-right-square sidebar-nav-arrow"
           viewBox="0 0 16 16"
         >
           <path
@@ -39,12 +43,18 @@ function NavItem({ text, path }) {
   );
 }
 
-function SidebarNavLinks() {
+function SidebarNavLinks({ isCollapsed = false }) {
   return (
     <div className="sidebar-nav-groups">
       <ul className="sidebar-nav-ul">
         {primaryLinks.map((link) => (
-          <NavItem key={link.path} text={link.text} path={link.path} />
+          <NavItem
+            key={link.path}
+            text={link.text}
+            path={link.path}
+            icon={link.icon}
+            isCollapsed={isCollapsed}
+          />
         ))}
       </ul>
 
@@ -52,7 +62,13 @@ function SidebarNavLinks() {
         <h3 className="sidebar-nav-group-title">Demos</h3>
         <ul className="sidebar-nav-ul">
           {demoLinks.map((link) => (
-            <NavItem key={link.path} text={link.text} path={link.path} />
+            <NavItem
+              key={link.path}
+              text={link.text}
+              path={link.path}
+              icon={link.icon}
+              isCollapsed={isCollapsed}
+            />
           ))}
         </ul>
       </div>

@@ -8,7 +8,9 @@ import Palette2 from "./pages/Palette2";
 import Palette3 from "./pages/Palette3";
 import CarouselDemo from "./pages/CarouselDemo";
 import FooterDemo from "./pages/FooterDemo";
+import Footer from "./components/Footer";
 import "./styles/carousel-demo.css";
+import "./styles/footer-demo.css";
 
 function App() {
   const location = useLocation();
@@ -18,8 +20,8 @@ function App() {
     <>
       <Navbar />
       <main>
-        <div className={`app-layout${isHomeRoute ? " is-home-route" : ""}`}>
-          <Sidebar />
+        <div className="app-layout">
+          {!isHomeRoute && <Sidebar />}
           <section className="app-route-content">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -31,7 +33,7 @@ function App() {
             </Routes>
           </section>
         </div>
-        <footer></footer>
+        <Footer />
       </main>
     </>
   );

@@ -1,4 +1,6 @@
 import HeroSection from "../components/HeroSection";
+import ProgramsParallaxSection from "../components/ProgramsParallaxSection";
+import Sidebar from "../components/sidebar/Sidebar";
 import { Carousel, CarouselItem } from "../components/ui/Carousel";
 import "../styles/home-carousel.css";
 
@@ -34,31 +36,36 @@ function Home() {
   return (
     <>
       <HeroSection />
-      <section className="home-content">
-        <div className="content-container">
-          <div className="section-header">
-            <h2>Istaknuto</h2>
-            <p>Najnovije vijesti i događaji iz naše škole</p>
-          </div>
+      <div className="home-main-layout">
+        <Sidebar className="sidebar home-sidebar" enableTabletCollapse />
+        <section className="home-content">
+          <div className="content-container">
+            <div className="section-header">
+              <h2>Istaknuto</h2>
+              <p>Najnovije vijesti i događaji iz naše škole</p>
+            </div>
 
-          <Carousel options={{ loop: true, duration: 5 }}>
-            {highlights.map((item, index) => (
-              <CarouselItem key={index}>
-                <div className="highlight-slide">
-                  <img src={item.image} alt={item.title} />
-                  <div className="highlight-content">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    <a href={item.link} className="highlight-link">
-                      Saznaj više →
-                    </a>
+            <Carousel options={{ loop: true, duration: 5 }}>
+              {highlights.map((item, index) => (
+                <CarouselItem key={index}>
+                  <div className="highlight-slide">
+                    <img src={item.image} alt={item.title} />
+                    <div className="highlight-content">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <a href={item.link} className="highlight-link">
+                        Saznaj više →
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </Carousel>
-        </div>
-      </section>
+                </CarouselItem>
+              ))}
+            </Carousel>
+
+            <ProgramsParallaxSection />
+          </div>
+        </section>
+      </div>
     </>
   );
 }

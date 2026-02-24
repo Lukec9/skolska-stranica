@@ -12,8 +12,8 @@ function Footer() {
   ];
 
   return (
-    <footer className="school-footer">
-      <div className="school-footer-inner">
+    <footer className="footer">
+      <div className="footer-inner">
         <section className="footer-column">
           <h3>KONTAKT</h3>
           <p>Srednja strukovna škola Antuna Horvata</p>
@@ -46,7 +46,7 @@ function Footer() {
         </section>
       </div>
 
-      <div className="school-footer-bottom">
+      <div className="footer-bottom">
         <div className="footer-socials">
           <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
             YouTube
