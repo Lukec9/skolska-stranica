@@ -48,11 +48,14 @@ function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-socials">
-          <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
+          <a href="https://www.youtube.com/channel/UCrw9cSN-vSJmujZNe4-3WLw/videos" target="_blank" rel="noreferrer">
             YouTube
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/people/Srednja-strukovna-škola-Antuna-Horvata-Đakovo/100057613421127/" target="_blank" rel="noreferrer">
             Facebook
+          </a>
+          <a href="https://www.instagram.com/ssah_strukovna_dakovo/" target="_blank" rel="noreferrer">
+            Instagram
           </a>
         </div>
         <a href="#" className="privacy-link">

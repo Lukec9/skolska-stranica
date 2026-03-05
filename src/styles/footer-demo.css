@@ -40,6 +40,26 @@
   padding: 2rem;
 }
 
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column:nth-child(1) {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-column:nth-child(2) {
+  align-items: center;
+  text-align: center;
+}
+
+.footer-column:nth-child(3) {
+  align-items: flex-end;
+  text-align: right;
+}
+
 .footer-column h3 {
   margin: 0 0 0.75rem;
   color: var(--accent);
