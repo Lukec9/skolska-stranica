@@ -1,0 +1,242 @@
+.programs-page,
+.program-details-page {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 6.5rem 1.5rem 3rem;
+  color: #f8fafc;
+}
+
+.programs-page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.programs-page-overline,
+.program-details-overline {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #7dd3fc;
+}
+
+.programs-page-header h1,
+.program-details-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.programs-page-header p {
+  margin: 0.85rem auto 0;
+  max-width: 65ch;
+  color: rgba(241, 245, 249, 0.85);
+}
+
+.programs-page-groups {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.programs-page-sector {
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.85),
+    rgba(30, 41, 59, 0.82)
+  );
+  padding: 1.2rem;
+}
+
+.programs-page-sector-head h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+}
+
+.programs-page-sector-head p {
+  margin: 0.45rem 0 1rem;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.programs-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.programs-page-card {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.programs-page-icon,
+.program-details-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+}
+
+.programs-page-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.programs-page-card p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.8);
+  font-size: 0.9rem;
+}
+
+.programs-page-card a,
+.program-details-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.95),
+    rgba(139, 92, 246, 0.95)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.program-details-breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.92rem;
+  color: rgba(226, 232, 240, 0.7);
+  margin-bottom: 1rem;
+}
+
+.program-details-breadcrumb a {
+  color: #7dd3fc;
+}
+
+.program-details-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+
+.program-details-hero p {
+  margin: 0.5rem 0 0;
+  color: rgba(226, 232, 240, 0.85);
+  line-height: 1.55;
+}
+
+.program-details-info-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.program-details-info-card {
+  background: rgba(30, 41, 59, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.program-details-info-card h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #7dd3fc;
+}
+
+.program-details-info-card p {
+  margin: 0.4rem 0 0;
+}
+
+.program-details-section {
+  margin-top: 1rem;
+  background: rgba(15, 23, 42, 0.64);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.program-details-section h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.program-details-section ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.program-details-cta {
+  margin-top: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  background: linear-gradient(
+    120deg,
+    rgba(15, 23, 42, 0.85),
+    rgba(49, 46, 129, 0.7)
+  );
+  padding: 1.1rem;
+}
+
+.program-details-cta h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.program-details-cta p {
+  margin: 0.45rem 0 0;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.program-details-cta-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 64rem) {
+  .programs-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-details-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42rem) {
+  .programs-page,
+  .program-details-page {
+    padding: 5.8rem 1rem 2rem;
+  }
+
+  .programs-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-details-hero {
+    grid-template-columns: 1fr;
+  }
+}

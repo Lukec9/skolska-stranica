@@ -1,33 +1,7 @@
-function ProgramsParallaxSection() {
-  const programGroups = [
-    {
-      title: "Smjerovi prijediplomskog studija",
-      items: [
-        { name: "Programiranje", icon: "</>" },
-        { name: "Računalni sustavi i mreže", icon: "🛰" },
-        { name: "Baze podataka i web dizajn", icon: "🛢" },
-        { name: "Informacijski sustavi", icon: "🔗" },
-      ],
-    },
-    {
-      title: "Smjerovi diplomskog studija",
-      items: [
-        { name: "Programsko inženjerstvo", icon: "📄" },
-        { name: "Računalni sustavi", icon: "⚙" },
-        { name: "Ugradbena i prijenosna računala", icon: "💻" },
-      ],
-    },
-    {
-      title: "Mikrokvalifikacije",
-      items: [
-        { name: "Kibernetička sigurnost", icon: "🔒" },
-        { name: "Mikrotik akademija", icon: "📶" },
-        { name: "Uvod u umjetnu inteligenciju", icon: "🤖" },
-        { name: "Objektno orijentirano modeliranje", icon: "🧩" },
-      ],
-    },
-  ];
+import { Link } from "react-router-dom";
+import { programGroups } from "../data/programs";
 
+function ProgramsParallaxSection() {
   return (
     <section className="programs-parallax" aria-labelledby="programs-title">
       <div className="programs-overlay" />
@@ -41,16 +15,25 @@ function ProgramsParallaxSection() {
             <h3>{group.title}</h3>
             <div className="programs-grid">
               {group.items.map((item) => (
-                <article key={item.name} className="program-card">
+                <article key={item.slug} className="program-card">
                   <span className="program-icon" aria-hidden="true">
                     {item.icon}
                   </span>
                   <p>{item.name}</p>
+                  <Link to={`/zanimanja/${item.slug}`} className="program-card-link">
+                    Pogledaj detalje
+                  </Link>
                 </article>
               ))}
             </div>
           </div>
         ))}
+
+        <div className="programs-all-link-wrap">
+          <Link to="/zanimanja" className="programs-all-link">
+            Prikaži sva zanimanja
+          </Link>
+        </div>
       </div>
     </section>
   );
