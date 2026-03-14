@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const primaryLinks = [{ text: "Home", path: "/", icon: "🏠" }];
+const primaryLinks = [
+  { text: "Home", path: "/", icon: "🏠" },
+  { text: "Zanimanja", path: "/zanimanja", icon: "📚" },
+];
 
 const demoLinks = [
   { text: "Carousel Demo", path: "/carousel", icon: "🎠" },

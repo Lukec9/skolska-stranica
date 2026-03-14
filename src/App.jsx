@@ -8,6 +8,8 @@ import Palette2 from "./pages/Palette2";
 import Palette3 from "./pages/Palette3";
 import CarouselDemo from "./pages/CarouselDemo";
 import FooterDemo from "./pages/FooterDemo";
+import Programs from "./pages/Programs";
+import ProgramDetails from "./pages/ProgramDetails";
 import Footer from "./components/Footer";
 import "./styles/carousel-demo.css";
 import "./styles/footer-demo.css";
@@ -30,6 +32,8 @@ function App() {
               <Route path="/palette3" element={<Palette3 />} />
               <Route path="/carousel" element={<CarouselDemo />} />
               <Route path="/footer" element={<FooterDemo />} />
+              <Route path="/zanimanja" element={<Programs />} />
+              <Route path="/zanimanja/:slug" element={<ProgramDetails />} />
             </Routes>
           </section>
         </div>
